@@ -1,0 +1,244 @@
+
+.contenedor{
+  display: flex;
+  flex-direction: row;
+}
+.informacion{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 10px;
+
+}
+.historial{
+  width: 36%;
+}
+.resumen{
+  width: 116%;
+}
+/* .resumen > div{
+  width: 95%;
+} */
+.resumen{
+  margin-bottom: 10px;
+}
+.botonesEnlaces{
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+.enlaces{
+  margin-bottom: 10px;
+}
+
+.progress-container {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.completed .step-number {
+  background-color: #4CAF50;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  margin-top: 0;
+}
+
+.step-content p {
+  margin-bottom: 0;
+}
+
+.step-content button {
+  background-color: #FFC107;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.list-work > li{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.list-work{
+  max-height:450px; /* Altura máxima de la lista */
+  overflow-y: auto; /* Habilitar desplazamiento vertical */
+  list-style-type: none; /* Eliminar los puntos de las viñetas */
+  padding-left: 0; /* Eliminar el espacio en blanco izquierdo */
+}
+.total-facturado {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.total-facturado-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.total-facturado-amount {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.cobrado-label {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.arrow {
+  color: green;
+  font-size: 16px;
+}
+.total-facturado-amount {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.cobrado-label {
+  font-size: 14px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.arrow {
+  color: green;
+  font-size: 16px;
+}
+.list-work .progress {
+  width: 150px;
+  height: 150px !important;
+  float: left;
+  line-height: 150px;
+  background: none;
+  margin: 20px;
+  box-shadow: none;
+  position: relative;
+}
+.list-work .progress:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 12px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.list-work .progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.list-work .progress .progress-left {
+  left: 0;
+}
+.list-work .progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 12px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+.list-work .progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.list-work .progress .progress-right {
+  right: 0;
+}
+.list-work .progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  animation: loading-1 1.8s linear forwards;
+}
+.list-work .progress .progress-value {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: #323131;
+  font-size: 24px;
+  color: #fff;
+  line-height: 135px;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+.list-work .progress.blue .progress-bar {
+  border-color: #049dff;
+}
+.list-work .progress.blue .progress-left .progress-bar {
+  animation: loading-2 1.5s linear forwards 1.8s;
+}
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+}
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+.botonesEnlaces > button{
+  margin-right: 10px;
+}

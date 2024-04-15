@@ -1,0 +1,16 @@
+.text-center{
+  background-color: #176B87;
+  color: white !important;
+}
+.btn{
+  background-color: #EEF5FF;
+  color: #176B87 !important;
+  border-color: #EEF5FF;
+}
+.modal-title{
+  color: #176B87;
+}
+.form-group input {
+ margin-bottom: 10px;
+
+}

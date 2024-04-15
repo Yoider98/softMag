@@ -1,0 +1,99 @@
+<p class="titulo">MANO DE OBRA</p>
+<div class="container">
+  <form (ngSubmit)="EnviarDatos()" #formCotizacion="ngForm">
+    <div class="row">
+      <div class="col-md-2">
+        <label for="">Item</label>
+        <input required name="item" [(ngModel)]="cotiza.item" type="number" class="form-control" >
+      </div>
+      <div class="col-md-2">
+        <label for="">Categoria</label>
+        <select required id="tipo" name="tipo" [(ngModel)]="cotiza.tipo" class="form-control" (change)="onTipoChange()">
+          <option *ngFor="let grupo of opciones" [ngValue]="grupo.grupo">{{ grupo.grupo }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="">Actividad</label>
+        <select id="actividad" required name="actividad" [(ngModel)]="cotiza.actividad" class="form-control">
+          <option *ngFor="let opcion of opcionesFiltradas">{{ opcion }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="">Unidad de medida</label>
+        <select required name="unidad" [(ngModel)]="cotiza.unidad" class="form-control">
+          <option>mL</option>
+          <option>M2</option>
+          <option>M3</option>
+          <option>gL</option>
+          <option>kG</option>
+          <option>Und</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="">Cantidad</label>
+        <input required name="cantidad" [(ngModel)]="cotiza.cantidad" type="number" class="form-control" >
+      </div>
+      <div class="col-md-2">
+        <label for="">Valor unitario</label>
+        <input required name="valor" [(ngModel)]="cotiza.valor" type="number" class="form-control" >
+      </div>
+      <div class="col-md-12 mt-2">
+        <button type="submit" [disabled]="formCotizacion.invalid" class="btn btn-primary btn-block">Agregar</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+ <hr>
+<div id = 'pdfTable' class="container table-responsive">
+  <table class="table table-striped  border-dark">
+    <thead>
+      <th scope="col">Accion</th>
+      <th scope="col">Id</th>
+      <th scope="col">Item</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Actividad</th>
+      <th scope="col">Unidad</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Valor unitario</th>
+      <th scope="col">Valor parcial</th>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cotizar; let i = index">
+        <td class="acciones">
+          <button (click)="editarItem(i)" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+          </svg></button>
+          <button (click)="eliminarItem(i)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+          </svg></button>
+        </td>
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{item.item}}</td>
+        <td>{{item.tipo}}</td>
+        <td>{{item.actividad}}</td>
+        <td>{{item.cantidad}}</td>
+        <td>{{item.unidad}}</td>
+        <td>{{item.valor}}</td>
+        <td>{{item.valorT}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <th>Valor Total</th>
+        <td>{{total}}</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+<button style="margin-left: 50%; margin-bottom: 10px;" (click)="CrearPDF()"   class="btn">Generar PDF</button>
+

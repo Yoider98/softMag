@@ -1,0 +1,236 @@
+<section>
+  <h1>Hola, Usuario</h1>
+  <!-- <app-line-chart></app-line-chart> -->
+</section>
+<div class="contenedor container-fluid">
+  <div class="informacion">
+    <section class="resumen">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Resumen</h5>
+          <div class="container">
+            <div class="row">
+              <!-- Primera columna -->
+              <div class="col-md-4">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">TOTAL FACTURADO</h6>
+                    <div class="total-facturado-amount">0,00 €</div>
+                    <div class="cobrado-label">0,00 € Cobrado</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-success"
+                        style="width: 5%"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">TOTAL GASTOS</h6>
+                    <div class="total-facturado-amount">0,00 €</div>
+                    <div class="cobrado-label">0,00 € gastado</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        style="width: 5%"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segunda columna -->
+              <div class="col-md-8">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">BALANCE TOTAL</h6>
+
+                    <canvas id="chart">{{ balanceTotal }}</canvas>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Tercera columna -->
+              <!-- <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h6 class="card-subtitle">Ingresos / Gastos</h6>
+                    Contenido de la quinta card (Ocupa todo el espacio
+                    disponible)
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="enlaces">
+      <h2>¿Que desea hacer?</h2>
+      <div class="botonesEnlaces">
+        <button (click)="redirectToGastosCliente()" type="button" class="btn btn-outline-success">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+              <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+            </svg>
+                          <h4>Crear gastos Cliente</h4>
+
+
+        </button>
+
+        <button (click)="redirectToManoObra()" type="button" class="btn btn-outline-info">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+          </svg>
+                 <h4>Crear mano de obra</h4>
+           </button>
+           <button (click)="redirectToCronograma()" type="button" class="btn btn-outline-warning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-calendar4" viewBox="0 0 16 16">
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+            </svg>
+                   <h4>Crear cronograma</h4>
+             </button>
+      </div>
+    </section>
+  </div>
+  <div class="historial">
+    <div class="card col">
+      <div class="row g-0">
+        <div style="padding-top: 10px; padding-left: 10px" class="col-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="80"
+            height="80"
+            fill="currentColor"
+            class="bi bi-archive"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+        </div>
+        <div class="col-8">
+          <div class="card-body">
+            <h5 class="card-title">¿Como van tus trabajos?</h5>
+            <p class="card-text">
+              Aqui puedes ver el resumen de los progresos de alguno
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="list-work">
+      <li>
+        <div class="card">
+          <h5 class="card-header">Trabajo 1</h5>
+          <div class="card-body">
+            <h5 class="card-title">Trabajo 1</h5>
+            <p class="card-text">
+              .
+            </p>
+              <div class="progress blue">
+                <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">90%</div>
+              </div>
+
+
+          </div>
+          <div  class="card-footer text-muted d-flex justify-content-center align-items-center">
+            <a href="#" class="btn btn-primary">Ir a cronograma</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <h5 class="card-header">Trabajo 2</h5>
+          <div class="card-body">
+            <h5 class="card-title">Trabajo 2</h5>
+            <p class="card-text">
+              .
+            </p>
+              <div class="progress blue">
+                <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">80%</div>
+              </div>
+
+
+          </div>
+          <div  class="card-footer text-muted d-flex justify-content-center align-items-center">
+            <a href="#" class="btn btn-primary">Ir a cronograma</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <h5 class="card-header">Trabajo 3</h5>
+          <div class="card-body">
+            <h5 class="card-title">Trabajo 3</h5>
+            <p class="card-text">
+              .
+            </p>
+              <div class="progress blue">
+                <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">70%</div>
+              </div>
+
+
+          </div>
+          <div  class="card-footer text-muted d-flex justify-content-center align-items-center">
+            <a href="#" class="btn btn-primary">Ir a cronograma</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <h5 class="card-header">Trabajo 4</h5>
+          <div class="card-body">
+            <h5 class="card-title">Trabajo 4</h5>
+            <p class="card-text">
+              .
+            </p>
+              <div class="progress blue">
+                <span class="progress-left">
+                                  <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                                  <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">60%</div>
+              </div>
+
+
+          </div>
+          <div  class="card-footer text-muted d-flex justify-content-center align-items-center">
+            <a href="#" class="btn btn-primary">Ir a cronograma</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>

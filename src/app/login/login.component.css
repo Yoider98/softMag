@@ -1,0 +1,107 @@
+/* .presentacion{
+  width: 50%;
+  height: 100%;
+
+}
+
+.login{
+  width: 50%;
+  height: 100%;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+}
+.form-control {
+	height: 48px;
+	background-color: white;
+	color: black;
+	font-size: 16px;
+	border-radius: 5px;
+	box-shadow: none;
+	border: 1px solid rgba(0,0,0,.1);
+
+}
+.social-media{
+	position: relative;
+	width: 100%;
+	.social-icon{
+		display: block;
+		width: 40px;
+		height: 40px;
+		background: transparent;
+		border: 1px solid rgba(0,0,0,.05);
+		font-size: 16px;
+		margin-right: 5px;
+		border-radius: 50%;
+		span{
+			color: lighten(black,60%);
+		}
+		&:hover, &:focus{
+			background-color: aqua;
+			span{
+				color: white;
+			}
+		}
+	}
+} */
+
+
+
+.login-container {
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 80%;
+  height: 500px;
+  display: flex;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left-side {
+  flex: 1;
+  background-image: url('../../assets/Img/Fondo-login.png'); /* Reemplaza 'tu_imagen.jpg' con la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+.right-side {
+  flex: 1;
+  padding: 20px;
+  margin-top: 10%;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
